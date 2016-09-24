@@ -1,0 +1,39 @@
+<html ng-app="appOmdb">
+
+<head>
+
+  <meta charset="utf-8"/>
+  <title>Buscar Séries e Filmes</title>
+  <script src="lib/angular/angular.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+
+</head>
+
+<body ng-controller="appOmdbCtrl">
+  
+  <div>
+    <div>
+      <label>
+        <input type="text" placeholder="Pesquisar por nome" id="movie-title"/>
+      </label>
+      <button ng-click="search()">
+        Pesquisar
+      </button>
+    </div>
+  </div>
+
+  <div ng-if="showloader == 'yes'"></div>
+  
+  <div ng-if="searchmovie == 'yes'">
+    <div>
+      <h2>{{title}}</h2>
+    </div>
+    <div>
+      <img src="{{poster}}">
+      <p>{{plot}}<p>
+    </div>
+  </div>
+
+</body>
+
+</html>
